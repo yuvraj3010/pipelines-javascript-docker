@@ -17,6 +17,6 @@ variables:
 
 steps:
 - script: |
-    docker build -f app/Dockerfile -t $(dockerID)/$(imageName)
+    docker build -f app/Dockerfile -t $(imageName)
     docker login -u $(dockerID) -p $(dockerPwd)
 #    docker push $(dockerID)$(imageName)
