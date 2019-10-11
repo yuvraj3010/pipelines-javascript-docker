@@ -11,7 +11,9 @@ pool:
 
 variables:
   imageName: 'pipelines-javascript-docker'
-  dockerHub: 'https://hub.docker.com/yuvraj3010/python-hello-world'
+  dockerHub: 'https://hub.docker.com/'
+  dockerID: 'yuvraj3010'
+  dockerPwd: 'P@ssword3010'
   DOCKER_BUILDKIT: 1
 
 steps:
@@ -21,5 +23,6 @@ steps:
     repository: $(imageName)
     command: buildAndPush
     Dockerfile: app/Dockerfile
-    tags: |
-      tests
+- script: |
+    docker login -u $(dockerID) -p $(dockerPwd)
+    docker push $(imageName)
