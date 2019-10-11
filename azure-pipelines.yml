@@ -22,6 +22,7 @@ steps:
   displayName: Build and Push
   inputs:
     command: buildAndPush
+    containerRegistry: 'https://hub.docker.com/'
     repository: $(imageName)
     tags: |
       tag1
