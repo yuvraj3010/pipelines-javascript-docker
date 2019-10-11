@@ -21,4 +21,4 @@ steps:
     npm test
     docker build -f app/Dockerfile -t $(dockerID)/$(imageName)
     docker login -u $(dockerID) -p $(dockerPwd)
-    docker push $(imageName)
+    docker push $(dockerID)$(imageName)
