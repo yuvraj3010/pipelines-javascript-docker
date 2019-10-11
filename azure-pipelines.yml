@@ -11,7 +11,7 @@ pool:
 
 variables:
   imageName: 'pipelines-javascript-docker'
-  dockerHub: 'pipelines-javascript-docker-image'
+  dockerHub: 'https://hub.docker.com/yuvraj3010/python-hello-world'
   DOCKER_BUILDKIT: 1
 
 steps:
