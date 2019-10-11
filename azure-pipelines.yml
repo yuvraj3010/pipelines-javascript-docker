@@ -17,8 +17,6 @@ variables:
 
 steps:
 - script: |
-    npm install
-    npm test
     docker build -f app/Dockerfile -t $(dockerID)/$(imageName)
     docker login -u $(dockerID) -p $(dockerPwd)
-    docker push $(dockerID)$(imageName)
+#    docker push $(dockerID)$(imageName)
