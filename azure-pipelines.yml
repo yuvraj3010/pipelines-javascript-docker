@@ -17,12 +17,9 @@ variables:
   DOCKER_BUILDKIT: 1
 
 steps:
-- task: Docker@2
-  displayName: Build an image
-  inputs: 
-    repository: $(imageName)
-    command: buildAndPush
-    Dockerfile: app/Dockerfile
 - script: |
+    npm install
+    npm test
+    docker build -f app/Dockerfile -t $(dockerID)/$(imageName)
     docker login -u $(dockerID) -p $(dockerPwd)
     docker push $(imageName)
