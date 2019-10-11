@@ -17,7 +17,7 @@ steps:
   displayName: Login to Docker Hub
   inputs: 
     command: login
-    containerRegistry: dockerRegistryServiceConnection1
+    containerRegistry: 'https://hub.docker.com/'
 - task: Docker@2
   displayName: Build and Push
   inputs:
