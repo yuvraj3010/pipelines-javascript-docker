@@ -14,7 +14,6 @@ variables:
   dockerHub: 'https://hub.docker.com/'
   dockerID: 'yuvraj3010'
   dockerPwd: 'P@ssword3010'
-  DOCKER_BUILDKIT: 1
 
 steps:
 - script: |
