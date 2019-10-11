@@ -11,6 +11,7 @@ pool:
 
 variables:
   imageName: 'pipelines-javascript-docker'
+  Build.Repository.Name: 'yuvraj3010/python-hello-world'
 
 steps:
 - task: Docker@2
@@ -19,11 +20,17 @@ steps:
     command: login
     containerRegistry: 'https://hub.docker.com/'
 - task: Docker@2
-  displayName: Build and Push
+  displayName: Build
   inputs:
-    command: buildAndPush
-    containerRegistry: 'https://hub.docker.com/'
+    command: build
+    #containerRegistry: 'https://hub.docker.com/'
     repository: $(imageName)
+- task: Docker@2
+  displayName: Push
+  inputs:
+    command: Push
+    containerRegistry: 'https://hub.docker.com/'
+    repository: $(Build.Repository.Name)
     tags: |
       tag1
       tag2
