@@ -11,6 +11,7 @@ pool:
 
 variables:
   imageName: 'pipelines-javascript-docker'
+  dockerHub: 'pipelines-javascript-docker-image'
   DOCKER_BUILDKIT: 1
 
 steps:
