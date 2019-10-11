@@ -22,7 +22,7 @@ steps:
   displayName: Build and Push
   inputs:
     command: buildAndPush
-    repository: $(dockerID)/$(imageName)
+    repository: $(imageName)
     tags: |
       tag1
       tag2
