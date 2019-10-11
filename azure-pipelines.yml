@@ -17,12 +17,12 @@ steps:
   displayName: Login to Docker Hub
   inputs: 
     command: login
-    containerRegistry: 'https://hub.docker.com/?namespace=yuvraj3010'
+    containerRegistry: 'https://hub.docker.com/'
 - task: Docker@2
   displayName: Build and Push
   inputs:
     command: buildAndPush
-    repository: $(imageName)
+    repository: $(dockerID)/$(imageName)
     tags: |
       tag1
       tag2
